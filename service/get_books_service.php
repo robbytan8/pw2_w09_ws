@@ -8,14 +8,14 @@ include_once '../util/PDOUtil.php';
 $apiKey = filter_input(INPUT_GET, 'api_key');
 header("content-type:application/json");
 if (isset($apiKey)) {
-    $categoryDao = new BookDaoImpl();
-    $result = $categoryDao->getAllBooks();
-    $categories = array();
-    /* @var $category Book */
-    foreach ($result as $category) {
-        array_push($categories, $category);
+    $bookDao = new BookDaoImpl();
+    $result = $bookDao->getAllBooks();
+    $books = array();
+    /* @var $book Book */
+    foreach ($result as $book) {
+        array_push($books, $book);
     }
-    echo json_encode($categories);
+    echo json_encode($books);
 } else {
     $jsonData = array();
     $jsonData['status'] = 2;
