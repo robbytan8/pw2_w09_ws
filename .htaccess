@@ -1,0 +1,26 @@
+RewriteEngine On
+
+RewriteRule ^service/hello/?$ http://localhost/pw2_w09_ws/service/hello_service.php [L,QSA]
+RewriteRule ^service/hello/([^/]+)/?$ http://localhost/pw2_w09_ws/service/hello_service.php?api_key=$1 [L,QSA]
+RewriteRule ^service/hello/([^/]+)/([^/]+)/([^/]+)/?$ http://localhost/pw2_w09_ws/service/hello_service.php?api_key=$1&firstName=$2&lastName=$3 [L,QSA]
+
+RewriteRule ^service/book/all/?$ http://localhost/pw2_w09_ws/service/get_books_service.php [L,QSA]
+RewriteRule ^service/book/all/([^/]+)/?$ http://localhost/pw2_w09_ws/service/get_books_service.php?api_key=$1 [L,QSA]
+
+RewriteRule ^service/category/one/?$ http://localhost/pw2_w09_ws/service/get_category_service.php [L,QSA]
+RewriteRule ^service/category/one/([^/]+)/([^/]+)/?$ http://localhost/pw2_w09_ws/service/get_category_service.php?api_key=$1&id=$2 [L,QSA]
+
+RewriteRule ^service/category/all/?$ http://localhost/pw2_w09_ws/service/get_categories_service.php [L,QSA]
+RewriteRule ^service/category/all/([^/]+)/?$ http://localhost/pw2_w09_ws/service/get_categories_service.php?api_key=$1 [L,QSA]
+
+RewriteRule ^service/category/add/?$ http://localhost/pw2_w09_ws/service/add_category_service.php [L,QSA]
+RewriteRule ^service/category/add/([^/])+/([^/]+)/?$ http://localhost/pw2_w09_ws/service/add_category_service.php?api_key=$1&name=$2 [L,QSA]
+
+RewriteRule ^service/category/delete/?$ http://localhost/pw2_w09_ws/service/delete_category_service.php [L,QSA]
+RewriteRule ^service/category/delete/([^/])+/([^/]+)/?$ http://localhost/pw2_w09_ws/service/delete_category_service.php?api_key=$1&id=$2 [L,QSA]
+
+RewriteRule ^service/category/update/?$ http://localhost/pw2_w09_ws/service/update_category_service.php [L,QSA]
+RewriteRule ^service/category/update/([^/])+/([^/]+)/?$ http://localhost/pw2_w09_ws/service/update_category_service.php?api_key=$1&id=$2 [L,QSA]
+
+RewriteRule ^service/user/login/?$ http://localhost/pw2_w09_ws/service/user_login_service.php [L,QSA]
+#RewriteRule ^service/user/login/([^/])+/([^/]+)/?$ http://localhost/pw2_w09_ws/service/user_login_service.php?api_key=$1&email=$2 [L,QSA]
